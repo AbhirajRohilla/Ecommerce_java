@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Home from "./Home"
 import axios from "axios";
+// import { json } from "react-router-dom";
+// import { BiSunFill, BiMoon } from "react-icons/bi";
 
 const Navbar = ({ onSelectCategory, onSearch }) => {
   const getInitialTheme = () => {
@@ -34,7 +36,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
       setShowSearchResults(true)
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/products/search?name=${value}`
+        `http://localhost:8080/api/products/search?keyword=${value}`
       );
       setSearchResults(response.data);
       setNoResults(response.data.length === 0);
@@ -48,6 +50,8 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
       setNoResults(false);
     }
   };
+
+  
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
     onSelectCategory(category);
