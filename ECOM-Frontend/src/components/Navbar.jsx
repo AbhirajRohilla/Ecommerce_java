@@ -51,7 +51,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
     }
   };
 
-  
+
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
     onSelectCategory(category);
