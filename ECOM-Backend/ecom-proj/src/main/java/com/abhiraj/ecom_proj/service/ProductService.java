@@ -2,6 +2,7 @@ package com.abhiraj.ecom_proj.service;
 
 import com.abhiraj.ecom_proj.model.Product;
 import com.abhiraj.ecom_proj.repository.ProductRepository;
+import org.hibernate.engine.jdbc.env.spi.AnsiSqlKeywords;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,4 +33,18 @@ public class ProductService {
     }
 
 
+    public Product updateProduct(int id, Product product, MultipartFile imageFile) throws IOException {
+        product.setImageData(imageFile.getBytes());
+        product.setImageName(imageFile.getOriginalFilename());
+        product.setImageType(imageFile.getContentType());
+        return repo.save(product);
+    }
+
+    public void deleteProduct(int id) {
+        repo.deleteById(id);
+    }
+
+    public List<Product> searchProducts(String keyword) {
+        return repo.searchProducts(keyword);
+    }
 }
