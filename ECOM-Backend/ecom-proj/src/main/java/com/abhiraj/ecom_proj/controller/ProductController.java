@@ -71,13 +71,13 @@ public class ProductController {
         }
 
         if(product1!=null)
-       {
-           return new ResponseEntity<>("updated" , HttpStatus.OK);
-       }
-       else
-       {
-           return new ResponseEntity<>("Failed to update" , HttpStatus.BAD_REQUEST);
-       }
+        {
+            return new ResponseEntity<>("updated" , HttpStatus.OK);
+        }
+        else
+        {
+            return new ResponseEntity<>("Failed to update" , HttpStatus.BAD_REQUEST);
+        }
     }
 
 
