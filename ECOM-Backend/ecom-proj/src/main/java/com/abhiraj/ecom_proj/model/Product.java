@@ -12,6 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name="products")
 public class Product {
 
     @Id
@@ -29,5 +30,6 @@ public class Product {
     private String imageName;
     private String imageType;
     @Lob
+    @Column(name = "image_data", columnDefinition = "LONGBLOB")
     private byte[] imageData;
 }
