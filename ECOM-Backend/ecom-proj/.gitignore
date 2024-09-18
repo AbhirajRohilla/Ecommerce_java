@@ -35,4 +35,4 @@ build/
 
 
 #variables
-application.properties
+application-dev.properties
