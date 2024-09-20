@@ -119,7 +119,7 @@ const Home = ({ selectedCategory }) => {
                     }}
                   >
                     <div className="buttons-liked">
-                      <i className="bi bi-heart"></i>
+                    
                     </div>
                   </div>
                   <div
